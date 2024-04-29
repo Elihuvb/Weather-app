@@ -25,7 +25,7 @@ const getData = async () => {
         <span class="data-cont-p">${data.location.localtime}</span><br>
         <p class="data">Temp: </p>
         <span class="data-cont-p">${data.current.temp_c}º</span><br>
-        <p class="data">Feels like: </p>
+        <p class="data">Thermal sensation: </p>
         <span class="data-cont-p">${data.current.feelslike_c}º</span><br>
     </div>
     `;
@@ -35,10 +35,10 @@ const getData = async () => {
         let div3 = document.createElement("DIV");
         div3.classList.add("hour");
         div3.innerHTML = `
-        <p class="data-hour">${data.forecast.forecastday[0].hour[i].time}</p>
+        <p class="data-hour time">${data.forecast.forecastday[0].hour[i].time}</p>
         <img src="${data.forecast.forecastday[0].hour[i].condition.icon}" class="img-hour">
         <div class="data-hour-cont">
-            <p class="data-hour">${data.forecast.forecastday[0].hour[i].condition.text}</p>
+            <p class="data-hour condition-hour">${data.forecast.forecastday[0].hour[i].condition.text}</p>
             <p class="data-hour">${data.forecast.forecastday[0].hour[i].temp_c}º</p>
         </div>
         `;
@@ -61,5 +61,3 @@ const getData = async () => {
 }
 
 getData();
-
-// how to get the date hour from a API with javascript?
